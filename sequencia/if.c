@@ -1,11 +1,13 @@
-#include<stdio.h>
+#include <stdio.h>
 
 int main ()
 {
-    int a = 1, b=2 , c= 3, men, mai;
+    int a , b , c, men, mai;
 
-    if( a < b)
-    {
+    printf("Entre a, b, c -> ");
+    scanf("%i %i %i", &a, &b, &c);
+
+    if( a < b){
         men = a;
         mai = b;
     }
@@ -17,10 +19,12 @@ int main ()
     if ( c < men)
         printf("%i %i %i\n", c, men, mai);
 
-    else if( c > mai)
-        printf("%i %i %i\n", men, mai, c);
-
-    else    
-        printf("%i %i %i\n", men, c, mai);
-
+    else
+    {
+        if( c > mai)
+            printf("%i %i %i\n", men, mai, c);
+        
+        else    
+            printf("%i %i %i\n", men, c, mai);
+    } 
 }
