@@ -1,6 +1,9 @@
 #include <stdio.h>
 
+int count = 0;
+
 void printPanquecas (int* pan, int s, int e){
+        printf("%d: ", count++);
         for (int i = 0; i < e; i++){
             printf("%d ", pan[i]);
         }
@@ -27,10 +30,7 @@ void main(){
         scanf("%d", &pan[s]);
     }
 
-    for (int i = 0; i < tam; i++){
-        printf("%d ", pan[i]);
-    }
-    printf("\n");
+    printPanquecas(pan, 0, tam);
     int viradas = 0;
 
     
@@ -52,7 +52,7 @@ void main(){
             virar(pan, l, r);
             viradas++;
             
-            // printPanquecas(pan, 0, tam);
+            printPanquecas(pan, 0, tam);
         }
         
         // coloca na posição certa
@@ -61,7 +61,7 @@ void main(){
         virar(pan, l, r);
         viradas++;
 
-        // printPanquecas(pan, 0, tam);
+        printPanquecas(pan, 0, tam);
     }
 
     printf("\nviradas = %d\n", viradas);
